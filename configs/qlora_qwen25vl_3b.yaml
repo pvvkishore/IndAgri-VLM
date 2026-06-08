@@ -1,0 +1,88 @@
+# ─────────────────────────────────────────────────────────────────
+# IndAgri-VLM — QLoRA Fine-tuning Config
+# Model  : Qwen/Qwen2.5-VL-3B-Instruct
+# Method : QLoRA (4-bit NF4 + LoRA adapters)
+# Author : Dr. P.V.V. Kishore, KL University (KLEF)
+# Paper  : IndAgri-VLM (Computers and Electronics in Agriculture, 2026)
+# ─────────────────────────────────────────────────────────────────
+
+# ── Model ────────────────────────────────────────────────────────
+model:
+  name          : "Qwen/Qwen2.5-VL-3B-Instruct"
+  img_size      : 224
+  num_classes   : 18
+  torch_dtype   : "bfloat16"
+
+# ── QLoRA (BitsAndBytes 4-bit) ───────────────────────────────────
+qlora:
+  load_in_4bit          : true
+  bnb_4bit_quant_type   : "nf4"
+  bnb_4bit_compute_dtype: "bfloat16"
+  bnb_4bit_use_double_quant: true
+
+# ── LoRA adapters ────────────────────────────────────────────────
+lora:
+  r              : 32
+  lora_alpha     : 64
+  lora_dropout   : 0.05
+  bias           : "none"
+  task_type      : "CAUSAL_LM"
+  target_modules :
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+
+# ── Training ─────────────────────────────────────────────────────
+training:
+  output_dir          : "models/checkpoints/qlora_qwen25vl_3b"
+  num_epochs          : 5
+  per_device_batch    : 2
+  gradient_accumulation: 8      # effective batch = 2 x 8 = 16
+  learning_rate       : 2.0e-4
+  lr_scheduler        : "cosine"
+  warmup_ratio        : 0.05
+  weight_decay        : 0.01
+  max_grad_norm       : 1.0
+  fp16                : false
+  bf16                : true
+  gradient_checkpointing: true
+  dataloader_workers  : 2
+  save_steps          : 200
+  eval_steps          : 200
+  logging_steps       : 50
+  load_best_model     : true
+  metric_for_best     : "eval_accuracy"
+  seed                : 42
+
+# ── Data ─────────────────────────────────────────────────────────
+data:
+  processed_dir : "data/processed"
+  label_map     : "data/processed/label_map.json"
+  train_csv     : "data/processed/train.csv"
+  val_csv       : "data/processed/val.csv"
+  test_csv      : "data/processed/test.csv"
+  img_size      : 224
+
+# ── Prompt template (seasonal context + disease query) ───────────
+prompt:
+  system: >
+    You are an expert agricultural scientist specialising in South Indian
+    crop diseases. Diagnose the disease in the image and provide treatment
+    recommendations in both English and Telugu.
+  user_template: >
+    Crop image attached. Weather context: {weather_context}.
+    Crop growth stage: {growth_stage}.
+    Question: What disease is present? Provide diagnosis and ICAR-recommended
+    treatment in English and Telugu.
+
+# ── Paths ─────────────────────────────────────────────────────────
+paths:
+  checkpoints : "models/checkpoints"
+  final_model : "models/final/indagri_vlm_qwen25vl_3b"
+  logs        : "results/logs"
+  figures     : "results/figures"
+  tables      : "results/tables"
