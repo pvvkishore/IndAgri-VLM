@@ -45,3 +45,9 @@ wandb/
 # OS
 .DS_Store
 Thumbs.db
+
+# Allow results subdirs for reproducibility
+!results/tables/
+!results/figures/
+!results/tables/**
+!results/figures/**
