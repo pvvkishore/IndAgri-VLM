@@ -1,0 +1,47 @@
+# Virtual environment
+ai_env/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Data (too large for git — use DVC or Zenodo)
+data/raw/
+data/processed/
+data/interim/
+
+# Model weights (too large for git)
+models/checkpoints/
+models/final/
+*.bin
+*.safetensors
+*.pt
+*.pth
+
+# Results (generated — not tracked)
+results/logs/
+results/figures/
+results/tables/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Secrets and keys
+.env
+wandb/
+*.key
+
+# IDE
+.vscode/settings.json
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
