@@ -51,3 +51,8 @@ Thumbs.db
 !results/figures/
 !results/tables/**
 !results/figures/**
+
+# Allow processed manifests (CSVs and JSONs — no raw images)
+!data/processed/
+!data/processed/*.csv
+!data/processed/*.json

@@ -1,0 +1,42 @@
+{
+  "label2id": {
+    "corn_gray_leaf_spot": 0,
+    "corn_leaf_blight": 1,
+    "corn_rust": 2,
+    "pepper_bacterial_spot": 3,
+    "pepper_healthy": 4,
+    "potato_early_blight": 5,
+    "potato_healthy": 6,
+    "potato_late_blight": 7,
+    "tomato_bacterial_spot": 8,
+    "tomato_early_blight": 9,
+    "tomato_healthy": 10,
+    "tomato_late_blight": 11,
+    "tomato_leaf_mold": 12,
+    "tomato_mosaic_virus": 13,
+    "tomato_septoria_leaf_spot": 14,
+    "tomato_spider_mites": 15,
+    "tomato_target_spot": 16,
+    "tomato_yellow_leaf_curl": 17
+  },
+  "id2label": {
+    "0": "corn_gray_leaf_spot",
+    "1": "corn_leaf_blight",
+    "2": "corn_rust",
+    "3": "pepper_bacterial_spot",
+    "4": "pepper_healthy",
+    "5": "potato_early_blight",
+    "6": "potato_healthy",
+    "7": "potato_late_blight",
+    "8": "tomato_bacterial_spot",
+    "9": "tomato_early_blight",
+    "10": "tomato_healthy",
+    "11": "tomato_late_blight",
+    "12": "tomato_leaf_mold",
+    "13": "tomato_mosaic_virus",
+    "14": "tomato_septoria_leaf_spot",
+    "15": "tomato_spider_mites",
+    "16": "tomato_target_spot",
+    "17": "tomato_yellow_leaf_curl"
+  }
+}
