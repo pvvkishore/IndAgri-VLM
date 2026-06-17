@@ -232,6 +232,12 @@ def resume_train(cfg: dict, start_epoch: int = 2) -> None:
             if step % 500 == 0:
                 torch.cuda.empty_cache()
 
+            # Save mid-epoch checkpoint every 2000 steps
+            if step > 0 and step % 2000 == 0:
+                step_ckpt = out_dir / f"epoch_{epoch:02d}_step_{step:05d}"
+                model.save_pretrained(str(step_ckpt))
+                log.info(f"  → Mid-epoch checkpoint: {step_ckpt}")
+
         avg_train_loss = train_loss / len(train_loader)
         avg_train_acc  = train_acc  / len(train_loader)
 
