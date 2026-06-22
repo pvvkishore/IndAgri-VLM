@@ -10,6 +10,13 @@ Usage:
 
 Author : Dr. P.V.V. Kishore, KL University (KLEF)
 Paper  : IndAgri-VLM (Computers and Electronics in Agriculture, 2026)
+
+NOTE (v2): collate_fn now MASKS the prompt (system + user) so that the
+language-modelling loss and token-accuracy are computed ONLY over the
+assistant's answer span. Previously labels = input_ids.clone(), which
+made the model spend loss reproducing the fixed system prompt and user
+template — inflating token-accuracy and diluting the disease-learning
+signal. See collate_fn for details.
 """
 
 import os
@@ -180,8 +187,33 @@ class IndAgriVLMDataset(Dataset):
 
 
 # ── Collate function ───────────────────────────────────────────────────────────
+# Cache the assistant-marker token ids on the processor so we tokenize the
+# marker only once (not every batch).
+def _get_assistant_marker(processor):
+    """
+    Token ids that mark the start of the assistant turn in Qwen's chat
+    template: '<|im_start|>assistant\n'. Cached on the processor object.
+    """
+    cached = getattr(processor, "_assistant_marker_ids", None)
+    if cached is not None:
+        return cached
+    marker_ids = processor.tokenizer.encode(
+        "<|im_start|>assistant\n", add_special_tokens=False
+    )
+    processor._assistant_marker_ids = marker_ids
+    return marker_ids
+
+
 def collate_fn(batch, processor, device="cuda"):
-    """Process batch of messages into model inputs."""
+    """
+    Process a batch of messages into model inputs.
+
+    IMPORTANT (v2): labels are MASKED so loss/accuracy are computed only on
+    the assistant's answer. Everything before the '<|im_start|>assistant\\n'
+    marker (system prompt + user template + image tokens) is set to -100,
+    as are all padding positions. This focuses the gradient on producing the
+    correct diagnosis rather than reproducing the fixed prompt.
+    """
     texts = []
     images_list = []
 
@@ -207,13 +239,46 @@ def collate_fn(batch, processor, device="cuda"):
         truncation     = True,
         max_length     = 512,
     )
-    inputs["labels"] = inputs["input_ids"].clone()
+
+    # ── Build masked labels ──
+    labels = inputs["input_ids"].clone()
+    marker = _get_assistant_marker(processor)
+    mlen   = len(marker)
+    input_ids = inputs["input_ids"]
+    attn      = inputs.get("attention_mask", None)
+
+    for b in range(input_ids.size(0)):
+        ids = input_ids[b].tolist()
+        # Find the LAST occurrence of the assistant marker → answer starts after it
+        ans_start = None
+        for s in range(len(ids) - mlen, -1, -1):
+            if ids[s:s + mlen] == marker:
+                ans_start = s + mlen
+                break
+        if ans_start is not None:
+            labels[b, :ans_start] = -100          # mask system+user+image span
+        else:
+            # Fallback: marker not found (shouldn't happen) — keep full sequence
+            # so we never silently train on nothing.
+            pass
+        # Mask padding positions
+        if attn is not None:
+            labels[b][attn[b] == 0] = -100
+
+    inputs["labels"] = labels
     return inputs
 
 
 # ── Metrics ────────────────────────────────────────────────────────────────────
 def compute_accuracy(logits: torch.Tensor, labels: torch.Tensor) -> float:
-    """Token-level accuracy on non-padding tokens."""
+    """
+    Token-level accuracy on non-masked tokens. With v2 masking, the only
+    non-masked tokens are the assistant answer span, so this now measures
+    answer-token accuracy rather than whole-sequence (prompt-inflated)
+    accuracy. NOTE: this is still a teacher-forced token metric, not a
+    generative disease-classification metric — use generative_eval.py for
+    the true top-1 / confusion-matrix numbers.
+    """
     shift_logits = logits[..., :-1, :].contiguous()
     shift_labels = labels[..., 1:].contiguous()
     preds = shift_logits.argmax(dim=-1)
@@ -415,6 +480,7 @@ def train(cfg: dict) -> None:
 
     # ── Save training history ──
     hist_path = Path("results/tables/training_history.json")
+    hist_path.parent.mkdir(parents=True, exist_ok=True)
     with open(hist_path, "w") as f:
         json.dump(history, f, indent=2)
     log.info(f"Training history saved: {hist_path}")
