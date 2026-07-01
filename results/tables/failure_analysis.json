@@ -1,0 +1,32 @@
+{
+  "total_failures": 20,
+  "total_samples": 500,
+  "error_rate": 0.04,
+  "top_error_pairs": [
+    {
+      "true": "tomato_target_spot",
+      "pred": "tomato_healthy",
+      "count": 5
+    },
+    {
+      "true": "tomato_late_blight",
+      "pred": "tomato_early_blight",
+      "count": 4
+    },
+    {
+      "true": "tomato_target_spot",
+      "pred": "tomato_early_blight",
+      "count": 2
+    },
+    {
+      "true": "tomato_yellow_leaf_curl",
+      "pred": "tomato_bacterial_spot",
+      "count": 1
+    },
+    {
+      "true": "tomato_yellow_leaf_curl",
+      "pred": "tomato_spider_mites",
+      "count": 1
+    }
+  ]
+}
