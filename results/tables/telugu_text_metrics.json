@@ -1,0 +1,69 @@
+{
+  "telugu_accuracy": 1.0,
+  "mean_bleu4": 0.2216,
+  "mean_rouge1": 0.4466,
+  "mean_rouge2": 0.402,
+  "mean_rougeL": 0.4466,
+  "per_class": [
+    {
+      "class": "tomato_late_blight",
+      "ref_telugu": "టమాటా ఆలస్య దద్దుర్లు",
+      "pred_telugu": "టమాటా ఆలస్య దద్దుర్లు",
+      "telugu_correct": 1,
+      "bleu4": 0.2263,
+      "rouge1": 0.4507,
+      "rouge2": 0.4058,
+      "rougeL": 0.4507
+    },
+    {
+      "class": "tomato_yellow_leaf_curl",
+      "ref_telugu": "టమాటా పసుపు ఆకు మురి వైరస్",
+      "pred_telugu": "టమాటా పసుపు ఆకు మురి వైరస్",
+      "telugu_correct": 1,
+      "bleu4": 0.2105,
+      "rouge1": 0.4384,
+      "rouge2": 0.3944,
+      "rougeL": 0.4384
+    },
+    {
+      "class": "pepper_bacterial_spot",
+      "ref_telugu": "మిరప బాక్టీరియల్ మచ్చ వ్యాధి",
+      "pred_telugu": "మిరప బాక్టీరియల్ మచ్చ వ్యాధి",
+      "telugu_correct": 1,
+      "bleu4": 0.2221,
+      "rouge1": 0.4507,
+      "rouge2": 0.4058,
+      "rougeL": 0.4507
+    },
+    {
+      "class": "potato_early_blight",
+      "ref_telugu": "బంగాళాదుంప తొలి దద్దుర్లు",
+      "pred_telugu": "బంగాళాదుంప తొలి దద్దుర్లు",
+      "telugu_correct": 1,
+      "bleu4": 0.2263,
+      "rouge1": 0.4507,
+      "rouge2": 0.4058,
+      "rougeL": 0.4507
+    },
+    {
+      "class": "tomato_early_blight",
+      "ref_telugu": "టమాటా తొలి దద్దుర్లు",
+      "pred_telugu": "టమాటా తొలి దద్దుర్లు",
+      "telugu_correct": 1,
+      "bleu4": 0.2263,
+      "rouge1": 0.4507,
+      "rouge2": 0.4058,
+      "rougeL": 0.4507
+    },
+    {
+      "class": "tomato_septoria_leaf_spot",
+      "ref_telugu": "టమాటా సెప్టోరియా మచ్చ",
+      "pred_telugu": "టమాటా సెప్టోరియా మచ్చ",
+      "telugu_correct": 1,
+      "bleu4": 0.2181,
+      "rouge1": 0.4384,
+      "rouge2": 0.3944,
+      "rougeL": 0.4384
+    }
+  ]
+}
