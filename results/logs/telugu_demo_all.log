@@ -1,0 +1,78 @@
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.48, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Loading model from: models/checkpoints/qlora_qwen25vl_3b_V2/epoch_05
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.09s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.04it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.02it/s]
+Model ready.
+
+======================================================================
+Class        : tomato_late_blight
+Image        : 12044cb0-2591-4696-8a85-3d3f319f4f6a___GHLB2 Leaf 8977.JPG
+Weather      : Temp: 30°C, RH: 85%, Rainfall: 92mm/30d, Season: Kharif Monsoon
+----------------------------------------------------------------------
+Model Output :
+Disease (English): Tomato Late Blight
+వ్యాధి (Telugu): టమాటా ఆలస్య దద్దుర్లు
+Diagnosis: The crop shows symptoms consistent with Tomato Late Blight. Given the weather conditions (Temp: 30°C, RH: 85%, Rainfall: 92mm/30d, Season: Kharif Monsoon), this is a high-risk period.
+Treatment: Apply recommended fungicide/bactericide as per ICAR guidelines. Remove infected plant parts. Ensure proper drainage and spacing.
+======================================================================
+
+======================================================================
+Class        : tomato_yellow_leaf_curl
+Image        : 2e00c47b-dcec-4c8e-9c32-680ddc7239fb___UF.GRC_YLCV_Lab 03001.JPG
+Weather      : Temp: 30°C, RH: 85%, Rainfall: 92mm/30d, Season: Kharif Monsoon
+----------------------------------------------------------------------
+Model Output :
+Disease (English): Tomato Yellow Leaf Curl
+వ్యాధి (Telugu): టమాటా పసుపు ఆకు మురి వైరస్
+Diagnosis: The crop shows symptoms consistent with Tomato Yellow Leaf Curl. Given the weather conditions (Temp: 30°C, RH: 85%, Rainfall: 92mm/30d, Season: Kharif Monsoon), this is a high-risk period.
+Treatment: Apply recommended fungicide/bactericide as per ICAR guidelines. Remove infected plant parts. Ensure proper drainage and spacing.
+======================================================================
+
+======================================================================
+Class        : pepper_bacterial_spot
+Image        : 952824e6-01bc-4b00-b893-18546066d084___NREC_B.Spot 9246.JPG
+Weather      : Temp: 30°C, RH: 85%, Rainfall: 92mm/30d, Season: Kharif Monsoon
+----------------------------------------------------------------------
+Model Output :
+Disease (English): Pepper Bacterial Spot
+వ్యాధి (Telugu): మిరప బాక్టీరియల్ మచ్చ వ్యాధి
+Diagnosis: The crop shows symptoms consistent with Pepper Bacterial Spot. Given the weather conditions (Temp: 30°C, RH: 85%, Rainfall: 92mm/30d, Season: Kharif Monsoon), this is a high-risk period.
+Treatment: Apply recommended fungicide/bactericide as per ICAR guidelines. Remove infected plant parts. Ensure proper drainage and spacing.
+======================================================================
+
+======================================================================
+Class        : potato_early_blight
+Image        : train_Potato leaf early blight_83_5.jpg
+Weather      : Temp: 30°C, RH: 85%, Rainfall: 92mm/30d, Season: Kharif Monsoon
+----------------------------------------------------------------------
+Model Output :
+Disease (English): Potato Early Blight
+వ్యాధి (Telugu): బంగాళాదుంప తొలి దద్దుర్లు
+Diagnosis: The crop shows symptoms consistent with Potato Early Blight. Given the weather conditions (Temp: 30°C, RH: 85%, Rainfall: 92mm/30d, Season: Kharif Monsoon), this is a high-risk period.
+Treatment: Apply recommended fungicide/bactericide as per ICAR guidelines. Remove infected plant parts. Ensure proper drainage and spacing.
+======================================================================
+
+======================================================================
+Class        : tomato_early_blight
+Image        : 5b86ab6a-3823-4886-85fd-02190898563c___RS_Erly.B 8452.JPG
+Weather      : Temp: 30°C, RH: 85%, Rainfall: 92mm/30d, Season: Kharif Monsoon
+----------------------------------------------------------------------
+Model Output :
+Disease (English): Tomato Early Blight
+వ్యాధి (Telugu): టమాటా తొలి దద్దుర్లు
+Diagnosis: The crop shows symptoms consistent with Tomato Early Blight. Given the weather conditions (Temp: 30°C, RH: 85%, Rainfall: 92mm/30d, Season: Kharif Monsoon), this is a high-risk period.
+Treatment: Apply recommended fungicide/bactericide as per ICAR guidelines. Remove infected plant parts. Ensure proper drainage and spacing.
+======================================================================
+
+======================================================================
+Class        : tomato_septoria_leaf_spot
+Image        : 7783c954-d426-4931-945f-5e525da26e48___Matt.S_CG 1232.JPG
+Weather      : Temp: 30°C, RH: 85%, Rainfall: 92mm/30d, Season: Kharif Monsoon
+----------------------------------------------------------------------
+Model Output :
+Disease (English): Tomato Septoria Leaf Spot
+వ్యాధి (Telugu): టమాటా సెప్టోరియా మచ్చ
+Diagnosis: The crop shows symptoms consistent with Tomato Septoria Leaf Spot. Given the weather conditions (Temp: 30°C, RH: 85%, Rainfall: 92mm/30d, Season: Kharif Monsoon), this is a high-risk period.
+Treatment: Apply recommended fungicide/bactericide as per ICAR guidelines. Remove infected plant parts. Ensure proper drainage and spacing.
+======================================================================
+
+[Saved] Telugu demo outputs → results/tables/telugu_demo_outputs.json

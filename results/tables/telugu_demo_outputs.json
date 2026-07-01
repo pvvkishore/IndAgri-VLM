@@ -1,0 +1,38 @@
+[
+  {
+    "class": "tomato_late_blight",
+    "image_path": "/home/pvvkishore/projects/IndAgri-VLM/data/raw/plantvillage/PlantVillage/Tomato_Late_blight/12044cb0-2591-4696-8a85-3d3f319f4f6a___GHLB2 Leaf 8977.JPG",
+    "weather": "Temp: 30°C, RH: 85%, Rainfall: 92mm/30d, Season: Kharif Monsoon",
+    "output": "Disease (English): Tomato Late Blight\nవ్యాధి (Telugu): టమాటా ఆలస్య దద్దుర్లు\nDiagnosis: The crop shows symptoms consistent with Tomato Late Blight. Given the weather conditions (Temp: 30°C, RH: 85%, Rainfall: 92mm/30d, Season: Kharif Monsoon), this is a high-risk period.\nTreatment: Apply recommended fungicide/bactericide as per ICAR guidelines. Remove infected plant parts. Ensure proper drainage and spacing."
+  },
+  {
+    "class": "tomato_yellow_leaf_curl",
+    "image_path": "/home/pvvkishore/projects/IndAgri-VLM/data/raw/plantvillage/PlantVillage/Tomato__Tomato_YellowLeaf__Curl_Virus/2e00c47b-dcec-4c8e-9c32-680ddc7239fb___UF.GRC_YLCV_Lab 03001.JPG",
+    "weather": "Temp: 30°C, RH: 85%, Rainfall: 92mm/30d, Season: Kharif Monsoon",
+    "output": "Disease (English): Tomato Yellow Leaf Curl\nవ్యాధి (Telugu): టమాటా పసుపు ఆకు మురి వైరస్\nDiagnosis: The crop shows symptoms consistent with Tomato Yellow Leaf Curl. Given the weather conditions (Temp: 30°C, RH: 85%, Rainfall: 92mm/30d, Season: Kharif Monsoon), this is a high-risk period.\nTreatment: Apply recommended fungicide/bactericide as per ICAR guidelines. Remove infected plant parts. Ensure proper drainage and spacing."
+  },
+  {
+    "class": "pepper_bacterial_spot",
+    "image_path": "/home/pvvkishore/projects/IndAgri-VLM/data/raw/plantvillage/PlantVillage/Pepper__bell___Bacterial_spot/952824e6-01bc-4b00-b893-18546066d084___NREC_B.Spot 9246.JPG",
+    "weather": "Temp: 30°C, RH: 85%, Rainfall: 92mm/30d, Season: Kharif Monsoon",
+    "output": "Disease (English): Pepper Bacterial Spot\nవ్యాధి (Telugu): మిరప బాక్టీరియల్ మచ్చ వ్యాధి\nDiagnosis: The crop shows symptoms consistent with Pepper Bacterial Spot. Given the weather conditions (Temp: 30°C, RH: 85%, Rainfall: 92mm/30d, Season: Kharif Monsoon), this is a high-risk period.\nTreatment: Apply recommended fungicide/bactericide as per ICAR guidelines. Remove infected plant parts. Ensure proper drainage and spacing."
+  },
+  {
+    "class": "potato_early_blight",
+    "image_path": "/home/pvvkishore/projects/IndAgri-VLM/data/raw/plantdoc/train/Potato_leaf_early_blight/train_Potato leaf early blight_83_5.jpg",
+    "weather": "Temp: 30°C, RH: 85%, Rainfall: 92mm/30d, Season: Kharif Monsoon",
+    "output": "Disease (English): Potato Early Blight\nవ్యాధి (Telugu): బంగాళాదుంప తొలి దద్దుర్లు\nDiagnosis: The crop shows symptoms consistent with Potato Early Blight. Given the weather conditions (Temp: 30°C, RH: 85%, Rainfall: 92mm/30d, Season: Kharif Monsoon), this is a high-risk period.\nTreatment: Apply recommended fungicide/bactericide as per ICAR guidelines. Remove infected plant parts. Ensure proper drainage and spacing."
+  },
+  {
+    "class": "tomato_early_blight",
+    "image_path": "/home/pvvkishore/projects/IndAgri-VLM/data/raw/plantvillage/PlantVillage/Tomato_Early_blight/5b86ab6a-3823-4886-85fd-02190898563c___RS_Erly.B 8452.JPG",
+    "weather": "Temp: 30°C, RH: 85%, Rainfall: 92mm/30d, Season: Kharif Monsoon",
+    "output": "Disease (English): Tomato Early Blight\nవ్యాధి (Telugu): టమాటా తొలి దద్దుర్లు\nDiagnosis: The crop shows symptoms consistent with Tomato Early Blight. Given the weather conditions (Temp: 30°C, RH: 85%, Rainfall: 92mm/30d, Season: Kharif Monsoon), this is a high-risk period.\nTreatment: Apply recommended fungicide/bactericide as per ICAR guidelines. Remove infected plant parts. Ensure proper drainage and spacing."
+  },
+  {
+    "class": "tomato_septoria_leaf_spot",
+    "image_path": "/home/pvvkishore/projects/IndAgri-VLM/data/raw/plantvillage/PlantVillage/Tomato_Septoria_leaf_spot/7783c954-d426-4931-945f-5e525da26e48___Matt.S_CG 1232.JPG",
+    "weather": "Temp: 30°C, RH: 85%, Rainfall: 92mm/30d, Season: Kharif Monsoon",
+    "output": "Disease (English): Tomato Septoria Leaf Spot\nవ్యాధి (Telugu): టమాటా సెప్టోరియా మచ్చ\nDiagnosis: The crop shows symptoms consistent with Tomato Septoria Leaf Spot. Given the weather conditions (Temp: 30°C, RH: 85%, Rainfall: 92mm/30d, Season: Kharif Monsoon), this is a high-risk period.\nTreatment: Apply recommended fungicide/bactericide as per ICAR guidelines. Remove infected plant parts. Ensure proper drainage and spacing."
+  }
+]

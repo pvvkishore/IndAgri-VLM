@@ -1,0 +1,17 @@
+Using a slow image processor as `use_fast` is unset and a slow processor was saved with this model. `use_fast=True` will be the default behavior in v4.48, even if the model was saved with a slow processor. This will result in minor differences in outputs. You'll still be able to use a slow processor with `use_fast=False`.
+Loading model from: models/checkpoints/qlora_qwen25vl_3b_V2/epoch_05
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.10s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.04it/s]Loading checkpoint shards: 100%|██████████| 2/2 [00:01<00:00,  1.02it/s]
+Model ready.
+
+======================================================================
+Class        : tomato_late_blight
+Image        : 12044cb0-2591-4696-8a85-3d3f319f4f6a___GHLB2 Leaf 8977.JPG
+Weather      : Temp: 30°C, RH: 85%, Rainfall: 92mm/30d, Season: Kharif Monsoon
+----------------------------------------------------------------------
+Model Output :
+Disease (English): Tomato Late Blight
+వ్యాధి (Telugu): టమాటా ఆలస్య దద్దుర్లు
+Diagnosis: The crop shows symptoms consistent with Tomato Late Blight. Given the weather conditions (Temp: 30°C, RH: 85%, Rainfall: 92mm/30d, Season: Kharif Monsoon), this is a high-risk period.
+Treatment: Apply recommended fungicide/bactericide as per ICAR guidelines. Remove infected plant parts. Ensure proper drainage and spacing.
+======================================================================
+
