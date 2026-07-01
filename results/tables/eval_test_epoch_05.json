@@ -5,5 +5,16 @@
   "parse_rate": 1.0,
   "accuracy": 0.96,
   "macro_f1": 0.8511,
-  "failed_images": 0
+  "failed_images": 0,
+  "cohen_kappa": 0.9566,
+  "cohen_kappa_weighted": 0.9684,
+  "kappa_interpretation": "Almost Perfect (\u03ba \u2265 0.81)",
+  "auc_roc_macro": 0.9755,
+  "auc_roc_weighted": 0.9797,
+  "auc_note": "Computed on 16 classes (corn_gray_leaf_spot excluded: 1 sample only)",
+  "inference_time_ms_mean": 5873.6,
+  "inference_time_ms_std": 14.6,
+  "inference_fps": 0.17,
+  "inference_hardware": "NVIDIA Quadro RTX 4000 8GB VRAM, 4-bit NF4 QLoRA, batch=1",
+  "inference_note": "RTX 4000 local deployment; HPC A100 achieves ~8x faster (~700ms)"
 }
