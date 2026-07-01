@@ -1,0 +1,35 @@
+[
+  {
+    "config": "A: Base no fine-tune",
+    "accuracy": 0.0,
+    "macro_f1": 0.0,
+    "kappa": 0.0,
+    "psr": 0.0,
+    "n": 0,
+    "note": "Base model produces no parseable disease labels (PSR=0.0)"
+  },
+  {
+    "config": "B: +LoRA fine-tuned",
+    "accuracy": 0.7236,
+    "macro_f1": 0.6769,
+    "kappa": 0.6996,
+    "psr": 0.615,
+    "n": 123
+  },
+  {
+    "config": "C: +Weather context",
+    "accuracy": 0.8424,
+    "macro_f1": 0.8691,
+    "kappa": 0.8281,
+    "psr": 0.825,
+    "n": 165
+  },
+  {
+    "config": "D: +Telugu full",
+    "accuracy": 0.955,
+    "macro_f1": 0.9596,
+    "kappa": 0.951,
+    "psr": 1.0,
+    "n": 200
+  }
+]
