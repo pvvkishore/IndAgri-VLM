@@ -56,3 +56,6 @@ Thumbs.db
 !data/processed/
 !data/processed/*.csv
 !data/processed/*.json
+
+!results/logs/
+!results/logs/*.log

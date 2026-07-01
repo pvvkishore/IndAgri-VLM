@@ -1,0 +1,9 @@
+{
+  "checkpoint": "models/checkpoints/qlora_qwen25vl_3b_V2/epoch_05",
+  "split": "test",
+  "n_samples": 500,
+  "parse_rate": 1.0,
+  "accuracy": 0.96,
+  "macro_f1": 0.8511,
+  "failed_images": 0
+}
